@@ -142,6 +142,18 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 let mapleader = ","
 
+" Tab to last buffer to make it easy to go to the last file you were in.
+nmap <Tab> :b#<CR>
+
+" Exit Vim quickly
+map Q :qa<CR>
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 syntax enable                     " Turn on syntax highlighting.
 " Toggle RainbowParenthese highlighting
 au VimEnter * RainbowParenthesesToggle
@@ -169,6 +181,8 @@ set smartcase                     " But case-sensitive if expression contains a 
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
+
+set noswapfile                    " Turn of .swp files
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
