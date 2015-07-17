@@ -35,6 +35,8 @@ Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-bundler'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
+Bundle '/king/ag.vim'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:airline_powerline_fonts = 1
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'godlygeek/tabular'
