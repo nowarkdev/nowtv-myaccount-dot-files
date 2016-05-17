@@ -20,6 +20,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 map ,p :NERDTreeToggle<CR>
+nmap ,n :NERDTreeFind<CR>
 Bundle 'kien/ctrlp.vim'
 map ,b :CtrlPBuffer<CR>
 Bundle 'tpope/vim-rails'
@@ -35,14 +36,15 @@ Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-bundler'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
-Bundle '/king/ag.vim'
-let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:airline_powerline_fonts = 1
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'myusuf3/numbers.vim'
 Plugin 'sheerun/dracula-theme'
+Bundle 'rking/ag.vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'dkprice/vim-easygrep'
 "autocmd VimEnter * RainbowParenthesesToggle
 
 " Syntax highlighting
@@ -113,6 +115,20 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 set pastetoggle=<F2>
 
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
+
 " AutoComplPop like behavior.
 "let g:neocomplcache_enable_auto_select = 1
 
@@ -127,7 +143,7 @@ set pastetoggle=<F2>
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags ts=2 sts=2 sw=2
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS ts=4 sts=4 sw=4
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS ts=2 sts=2 sw=2
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -186,10 +202,11 @@ set ruler                         " Show cursor position.
 
 set noswapfile                    " Turn of .swp files
 
+set wrap!
+
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
-set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
@@ -241,7 +258,7 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 
 " Controversial...swap colon and semicolon for easier commands
