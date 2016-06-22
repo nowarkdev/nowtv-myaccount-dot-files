@@ -37,14 +37,17 @@ Bundle 'tpope/vim-bundler'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
-Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'junegunn/rainbow_parentheses.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'myusuf3/numbers.vim'
-Plugin 'sheerun/dracula-theme'
 Bundle 'rking/ag.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'dkprice/vim-easygrep'
+Bundle 'sjl/gundo.vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'tpope/vim-abolish'
+Bundle 'marijnh/tern_for_vim'
 "autocmd VimEnter * RainbowParenthesesToggle
 
 " Syntax highlighting
@@ -98,6 +101,9 @@ imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>  neocomplcache#undo_completion()
 inoremap <expr><C-l>  neocomplcache#complete_common_string()
+
+" Open Gundo
+map <leader>u :GundoToggle<CR>
 
 " format whole file
 map <C-f> mzgg=G`z
@@ -175,10 +181,8 @@ nnoremap <C-l> <C-w>l
 
 syntax enable                     " Turn on syntax highlighting.
 " Toggle RainbowParenthese highlighting
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParentheses
+let g:rainbow#blacklist = [233, 234, 236]
 
 set autoread                      " Turn on autoread to watch for changes
 :au CursorHold * checktime        " Fires after you move the cursor and then let it sit still for updatetime
