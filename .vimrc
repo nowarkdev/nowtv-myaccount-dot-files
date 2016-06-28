@@ -325,4 +325,4 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
-hi CursorLine ctermbg=234
+hi CursorLine ctermbg=236
