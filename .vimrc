@@ -41,6 +41,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 
 Bundle 'scrooloose/syntastic'
 " set statusline+=%#warningmsg#
@@ -84,8 +85,6 @@ map ,b :CtrlPBuffer<CR>
 
 Bundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
-
-"autocmd VimEnter * RainbowParenthesesToggle
 
 " Syntax highlighting
 Bundle 'markcornick/vim-vagrant'
@@ -217,8 +216,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 syntax enable                     " Turn on syntax highlighting.
+
 " Toggle RainbowParenthese highlighting
-au VimEnter * RainbowParentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 let g:rainbow#blacklist = [233, 234, 236]
 
 set autoread                      " Turn on autoread to watch for changes
@@ -316,3 +319,10 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+hi CursorLine ctermbg=234
