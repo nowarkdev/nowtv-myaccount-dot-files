@@ -14,15 +14,11 @@ endif
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-map ,p :NERDTreeToggle<CR>
-nmap ,n :NERDTreeFind<CR>
-Bundle 'kien/ctrlp.vim'
-map ,b :CtrlPBuffer<CR>
+Plugin 'sheerun/dracula-theme'
+Bundle 'rking/ag.vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'dkprice/vim-easygrep'
+Bundle 'marijnh/tern_for_vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'kchmck/vim-coffee-script'
@@ -35,19 +31,60 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-bundler'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
-Bundle 'junegunn/rainbow_parentheses.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'myusuf3/numbers.vim'
-Bundle 'rking/ag.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'dkprice/vim-easygrep'
-Bundle 'sjl/gundo.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'tpope/vim-abolish'
-Bundle 'marijnh/tern_for_vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+
+Bundle 'scrooloose/syntastic'
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_javascript_checkers = ['eslint']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let b:syntastic_javascript_eslint_exec = './node_modules/eslint/bin/eslint.js'
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+Bundle 'scrooloose/nerdtree'
+map ,p :NERDTreeToggle<CR>
+nmap ,n :NERDTreeFind<CR>
+
+Bundle 'kien/ctrlp.vim'
+map ,b :CtrlPBuffer<CR>
+
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+
 "autocmd VimEnter * RainbowParenthesesToggle
 
 " Syntax highlighting
