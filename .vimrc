@@ -13,19 +13,12 @@ endif
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
-
-Plugin 'sheerun/dracula-theme'
 Bundle 'rking/ag.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'dkprice/vim-easygrep'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-liquid'
@@ -33,7 +26,6 @@ Bundle 'tpope/vim-bundler'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'sjl/gundo.vim'
 Bundle 'jelera/vim-javascript-syntax'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'myusuf3/numbers.vim'
@@ -43,17 +35,17 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 
-Bundle 'scrooloose/syntastic'
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_javascript_checkers = ['eslint']
+Bundle 'kien/rainbow_parentheses.vim'
+" Toggle RainbowParenthese highlighting
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow#blacklist = [233, 234, 236]
 
+Bundle 'reedes/vim-colors-pencil'
+colorscheme pencil
+set background=dark
+
+Bundle 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -172,17 +164,6 @@ function! Multiple_cursors_after()
   endif
 endfunction
 
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() .
-"\<CR>"
-
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags ts=2 sts=2 sw=2
@@ -216,13 +197,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 syntax enable                     " Turn on syntax highlighting.
-
-" Toggle RainbowParenthese highlighting
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-let g:rainbow#blacklist = [233, 234, 236]
 
 set autoread                      " Turn on autoread to watch for changes
 :au CursorHold * checktime        " Fires after you move the cursor and then let it sit still for updatetime
@@ -271,11 +245,6 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Or use vividchalk
-"colorscheme candy
-"colorscheme solarized
-color Dracula
-
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
@@ -292,9 +261,6 @@ nmap <silent> <leader>s :set spell!<CR>
 " Set region to British English
 set spelllang=en_gb
 
-" Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
-
 " CtrtlP Plugin mappings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -304,21 +270,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
 augroup CursorLine
   au!
