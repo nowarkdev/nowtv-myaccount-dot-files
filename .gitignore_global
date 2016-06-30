@@ -1,9 +1,0 @@
-*~
-.DS_Store
-*.swp
-*.swn
-*.swo
-*.swl
-vendor/bundle
-.DS_Store
-dump.rdb
