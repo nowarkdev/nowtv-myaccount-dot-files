@@ -36,6 +36,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'pangloss/vim-javascript'
+Bundle 'mattn/emmet-vim'
 
 Bundle 'Lokaltog/vim-easymotion'
 map  f <Plug>(easymotion-bd-f)
