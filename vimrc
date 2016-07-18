@@ -54,28 +54,23 @@ Bundle 'reedes/vim-colors-pencil'
 colorscheme pencil
 set background=dark
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-let b:syntastic_javascript_eslint_exec = './node_modules/eslint/bin/eslint.js'
-
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
+set autochdir
+lcd %:p:h
+autocmd BufEnter * let b:syntastic_javascript_eslint_exec = system('echo -n $(npm bin)/eslint')
+let g:syntastic_error_symbol = '🔴'
 highlight link SyntasticErrorSign SignColumn
+let g:syntastic_warning_symbol = '🔵'
 highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
 
 Bundle 'scrooloose/nerdtree'
 map ,p :NERDTreeToggle<CR>
