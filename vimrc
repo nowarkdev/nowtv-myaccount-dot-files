@@ -199,9 +199,8 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
-hi CursorLine ctermbg=236
+hi CursorLine ctermbg=240
 
 ab cl, console.log('=========>',)<ESC>i
 ab des, describe('', () => {<CR>});<ESC>O
 ab it, it('', () => {<CR>});<ESC>O
-
