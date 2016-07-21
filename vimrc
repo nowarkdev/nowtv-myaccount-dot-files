@@ -200,6 +200,7 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 hi CursorLine ctermbg=240
+hi Normal ctermbg=none
 
 ab cl, console.log('=========>',)<ESC>i
 ab des, describe('', () => {<CR>});<ESC>O
