@@ -52,7 +52,7 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:rainbow#blacklist = [233, 234, 236]
 
 Bundle 'reedes/vim-colors-pencil'
-colorscheme pencil
+colorscheme Tomorrow-Night-Eighties
 set background=dark
 
 Plugin 'scrooloose/syntastic'

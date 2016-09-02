@@ -8,8 +8,8 @@ ln -s ${BASEDIR}/vimrc ~/.vimrc
 # Tmux
 ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
 
-# Download iTerm Pencil Dark Theme
-wget https://raw.githubusercontent.com/mattly/iterm-colors-pencil/master/pencil-dark.itermcolors
+# Copy theme to ~/.vim/colors
+mkdir ~/.vim/colors/
+cp ${BASEDIR}/Tomorrow-Night-Eighties.vim ~/.vim/colors/
 
-# Download Pencil Vim colours 
-wget https://raw.githubusercontent.com/reedes/vim-colors-pencil/master/colors/pencil.vim -P ~/.vim/colors/
+echo "You must apply the Tomrrow-Night-Eighties iTerm2 theme ( located in the project root ) in order for the colours to work correctly."
