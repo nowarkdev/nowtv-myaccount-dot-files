@@ -38,6 +38,12 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mattn/emmet-vim'
 
+Bundle 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Bundle 'ryanoasis/vim-devicons'
+set encoding=utf8
+set guifont=~/Library/Fonts/m+1\ for\ Powerline.ttf:h12
+
 Bundle 'Lokaltog/vim-easymotion'
 map  f <Plug>(easymotion-bd-f)
 map  F <Plug>(easymotion-bd-f)
@@ -76,6 +82,8 @@ highlight link SyntasticWarningSign SignColumn
 Bundle 'scrooloose/nerdtree'
 map ,p :NERDTreeToggle<CR>
 nmap ,n :NERDTreeFind<CR>
+
+Bundle 'Xuyuanp/nerdtree-git-plugin'
 
 Bundle 'kien/ctrlp.vim'
 map ,b :CtrlPBuffer<CR>
@@ -126,6 +134,7 @@ set autoread                      " Turn on autoread to watch for changes
 
 filetype plugin indent on         " Turn on file type detection.
 
+set t_Co=256                      " Use 256 colours
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
