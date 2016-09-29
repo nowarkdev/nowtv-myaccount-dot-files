@@ -13,32 +13,29 @@ endif
 
 " let Vundle manage Vundle
 Bundle 'VundleVim/Vundle.vim'
-Bundle 'gmarik/vundle'
 Bundle 'rking/ag.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'dkprice/vim-easygrep'
 Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-liquid'
-Bundle 'tpope/vim-bundler'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'othree/html5.vim'
+Bundle 'elzr/vim-json'
 Bundle 'godlygeek/tabular'
-Bundle 'digitaltoad/vim-jade'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mattn/emmet-vim'
-
 Bundle 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Bundle 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
+Bundle 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 Bundle 'ryanoasis/vim-devicons'
 set encoding=utf8
@@ -102,9 +99,6 @@ Bundle "garbas/vim-snipmate"
 
 " Copy/Paste Mac
 Bundle "kana/vim-fakeclip"
-
-" Ack
-Bundle 'ack.vim'
 
 call vundle#end()
 
