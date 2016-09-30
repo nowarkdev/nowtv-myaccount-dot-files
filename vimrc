@@ -26,6 +26,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-repeat'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mattn/emmet-vim'
 Bundle 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -79,6 +80,7 @@ highlight link SyntasticWarningSign SignColumn
 Bundle 'scrooloose/nerdtree'
 map ,p :NERDTreeToggle<CR>
 nmap ,n :NERDTreeFind<CR>
+let NERDTreeIgnore=['node_modules']
 
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 
