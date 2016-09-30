@@ -28,6 +28,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-repeat'
 Bundle 'pangloss/vim-javascript'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'mattn/emmet-vim'
 Bundle 'tiagofumo/vim-nerdtree-syntax-highlight'
 
