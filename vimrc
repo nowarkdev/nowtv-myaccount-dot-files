@@ -30,7 +30,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'mattn/emmet-vim'
-Bundle 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Bundle 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
@@ -82,8 +81,6 @@ Bundle 'scrooloose/nerdtree'
 map ,p :NERDTreeToggle<CR>
 nmap ,n :NERDTreeFind<CR>
 let NERDTreeIgnore=['node_modules']
-
-Bundle 'Xuyuanp/nerdtree-git-plugin'
 
 Bundle 'kien/ctrlp.vim'
 map ,b :CtrlPBuffer<CR>
@@ -209,3 +206,4 @@ hi Normal ctermbg=none
 ab cl, console.log('=========>',)<ESC>i
 ab des, describe('', () => {<CR>});<ESC>O
 ab it, it('', () => {<CR>});<ESC>O
+let NERDTreeIgnore=['node_modules']
