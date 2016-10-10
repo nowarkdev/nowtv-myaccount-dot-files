@@ -30,6 +30,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'mattn/emmet-vim'
+Bundle 'Xuyuanp/nerdtree-git-plugin'
 
 Bundle 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
