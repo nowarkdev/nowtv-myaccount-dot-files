@@ -31,6 +31,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'mattn/emmet-vim'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
+Bundle 'ntpeters/vim-better-whitespace'
 
 Bundle 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
@@ -163,12 +164,14 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-" UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
 set laststatus=2                  " Show the status line all the time
+
+" StripWhiteSpace
+map <leader>w :StripWhitespace<CR>
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
