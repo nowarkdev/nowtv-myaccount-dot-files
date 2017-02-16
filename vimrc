@@ -34,7 +34,6 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'mattn/emmet-vim'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'ntpeters/vim-better-whitespace'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Bundle 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
