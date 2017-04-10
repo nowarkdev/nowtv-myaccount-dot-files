@@ -209,6 +209,7 @@ hi CursorLine ctermbg=240
 hi Normal ctermbg=none
 
 ab cl, console.log('=========>',)<ESC>i
-ab des, describe('', () => {<CR>});<ESC>O
-ab it, it('', () => {<CR>});<ESC>O
+ab des, describe('', () => {<CR>});<ESC>klllllll
+ab it, it('', () => {<CR>});<ESC>kl
+ab sit, it('', sinon.test(function () {<CR>}));<ESC>k
 let NERDTreeIgnore=['node_modules']
