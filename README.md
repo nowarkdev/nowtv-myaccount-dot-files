@@ -1,4 +1,4 @@
-# NOW TV Service Dot Files
+# NOW TV Service Dot Files  
 
 ## Requirements
 * [iTerm 2](https://www.iterm2.com/)
